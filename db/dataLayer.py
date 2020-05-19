@@ -17,6 +17,7 @@ class DataLayer:
         user = self.create_user_from_dict(user_dict)
         return user
 
+    # create user from dict
     def create_user_from_dict(self, user_dict):
         user = User(user_dict['_id'], user_dict['first_name'], user_dict['last_name'], user_dict['username'],
                     user_dict['email'], user_dict['age'], user_dict['date'])
