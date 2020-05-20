@@ -9,7 +9,7 @@ dataLayer = DataLayer()
 @app.route("/user/<string:user_id>")
 def get_user_by_id(user_id):
     user = dataLayer.get_user_by_id(user_id)
-    resp = app.response_class(response=json.dumps(user.to_json()),
+    resp = app.response_class(response=user.to_json(),
                               status=200,
                               mimetype="application/json")
 
@@ -20,7 +20,7 @@ def get_user_by_id(user_id):
 def get_user():
     username = request.args.get("username")
     user = dataLayer.get_user(username)
-    resp = app.response_class(response=json.dumps(user.to_json()),
+    resp = app.response_class(response=user.to_json(),
                               status=200,
                               mimetype="application/json")
 
